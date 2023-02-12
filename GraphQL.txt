@@ -1,0 +1,56 @@
+mutation CreatePost{
+  postCreate(title:"graph", content:"post2", token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UxMTQ5N2RhZDYyMzY3NjJlYTVmZWYiLCJpYXQiOjE2NzU2OTU5MTB9.Vfsa2-hinx6Ck4QxWq6DGGYrwlrug6H19S3FOVI3xt8")
+}
+
+mutation UpdatePost{
+  postUpdate(_id:"63e11770c5ea22e6af833752",title:"posts",content:"post1",token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UxMTQ5N2RhZDYyMzY3NjJlYTVmZWYiLCJpYXQiOjE2NzU2OTU5MTB9.Vfsa2-hinx6Ck4QxWq6DGGYrwlrug6H19S3FOVI3xt8")
+  
+}
+
+mutation DeletePost {
+  postDelete(_id:"63e118c7df02dd9cba77bc89", token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UxMTQ5N2RhZDYyMzY3NjJlYTVmZWYiLCJpYXQiOjE2NzU2OTU5MTB9.Vfsa2-hinx6Ck4QxWq6DGGYrwlrug6H19S3FOVI3xt8")
+}
+
+query GetOnePost {
+  
+  getOnepost(token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UxMTQ5N2RhZDYyMzY3NjJlYTVmZWYiLCJpYXQiOjE2NzU2OTU5MTB9.Vfsa2-hinx6Ck4QxWq6DGGYrwlrug6H19S3FOVI3xt8", _id:"63e11770c5ea22e6af833752"){
+    title
+    comments{content}
+  }
+}
+
+query GetPosts {
+  
+  getMyPosts(token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UxMTQ5N2RhZDYyMzY3NjJlYTVmZWYiLCJpYXQiOjE2NzU2OTU5MTB9.Vfsa2-hinx6Ck4QxWq6DGGYrwlrug6H19S3FOVI3xt8"){
+    content
+  }
+}
+
+mutation CreateComment {
+  commentCreate(_id:"63e11770c5ea22e6af833752",content:"hello2",token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UxMTQ5N2RhZDYyMzY3NjJlYTVmZWYiLCJpYXQiOjE2NzU2OTU5MTB9.Vfsa2-hinx6Ck4QxWq6DGGYrwlrug6H19S3FOVI3xt8")
+}
+
+query GetComments {
+  
+ getMyComments(_id:"63e11770c5ea22e6af833752", token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UxMTQ5N2RhZDYyMzY3NjJlYTVmZWYiLCJpYXQiOjE2NzU2OTU5MTB9.Vfsa2-hinx6Ck4QxWq6DGGYrwlrug6H19S3FOVI3xt8"){
+  content
+}
+}
+
+
+query GetOneComment {
+  
+  getOnecomment(token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UxMTQ5N2RhZDYyMzY3NjJlYTVmZWYiLCJpYXQiOjE2NzU2OTU5MTB9.Vfsa2-hinx6Ck4QxWq6DGGYrwlrug6H19S3FOVI3xt8", _id:"63e11770c5ea22e6af833752",c_id:"63e14bf5db64dcfef1de2606"){
+    content
+  }
+}
+
+mutation UpdateComment {
+  commentUpdate(token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UxMTQ5N2RhZDYyMzY3NjJlYTVmZWYiLCJpYXQiOjE2NzU2OTU5MTB9.Vfsa2-hinx6Ck4QxWq6DGGYrwlrug6H19S3FOVI3xt8", _id:"63e11770c5ea22e6af833752",c_id:"63e14bf5db64dcfef1de2606", content:"updatedComment")
+ 
+}
+
+mutation DeleteComment{
+  commentDelete(token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2UxMTQ5N2RhZDYyMzY3NjJlYTVmZWYiLCJpYXQiOjE2NzU2OTU5MTB9.Vfsa2-hinx6Ck4QxWq6DGGYrwlrug6H19S3FOVI3xt8", _id:"63e11770c5ea22e6af833752",c_id:"63e931d959353c23094104ec")
+ 
+}
